@@ -3,11 +3,13 @@ package com.epm.recipe.web_ui.config;
 import com.epm.recipe.domain.Recipe;
 import com.epm.recipe.service.EntityService;
 import com.epm.recipe.service.RecipeService;
+import com.epm.recipe.web_ui.controller.ErrorController;
 import com.epm.recipe.web_ui.controller.IndexController;
 import com.epm.recipe.web_ui.controller.MyRestRecipeController;
 import com.epm.recipe.web_ui.controller.RecipeController;
 import com.epm.recipe.web_ui.controller.MyRecipeController;
 import com.epm.recipe.web_ui.controller.RestRecipeController;
+import com.epm.recipe.web_ui.controller.SuccessController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -29,8 +31,13 @@ public class WebUiConfiguration {
     }
 
     @Bean
-    MyRecipeController recipeFindController(EntityService<Recipe> recipeService) {
+    MyRecipeController myRecipeController(EntityService<Recipe> recipeService) {
         return new MyRecipeController(recipeService);
+    }
+
+    @Bean
+    MyRestRecipeController myRestRecipeController(EntityService<Recipe> recipeService) {
+        return new MyRestRecipeController(recipeService);
     }
 
     @Bean
@@ -39,7 +46,12 @@ public class WebUiConfiguration {
     }
 
     @Bean
-    MyRestRecipeController myRestRecipeController(EntityService<Recipe> recipeService) {
-        return new MyRestRecipeController(recipeService);
+    SuccessController successController(EntityService<Recipe> recipeService) {
+        return new SuccessController(recipeService);
+    }
+
+    @Bean
+    ErrorController errorController() {
+        return new ErrorController();
     }
 }

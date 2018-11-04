@@ -32,14 +32,13 @@ public class MyRestRecipeController {
         return recipeService.findOneById(id);
     }
 
-    @PostMapping("addRecipe")
-    public void addRecipe(@RequestBody Recipe recipe) {
-            recipeService.create(recipe);
+    @PostMapping("createRecipe")
+    public void createRecipe(@RequestBody Recipe recipe) {
+        recipeService.create(recipe);
     }
 
     @PutMapping("updateRecipe")
     public void updateRecipe(@RequestBody Recipe recipe) {
-        Recipe recipeById = recipeService.findOneById(recipe.getId());
         recipeService.update(recipe);
     }
 

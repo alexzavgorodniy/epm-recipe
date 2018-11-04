@@ -5,14 +5,14 @@
 
 <div th:fragment="content">
   <div>
-    <h3>Add recipe</h3>
+    <h3>Create recipe</h3>
   </div>
   <hr>
   <div>
-    <form name="addRecipe" method="post" th:object="${addRecipe}">
+    <form name="createRecipe" method="post" th:object="${createRecipe}">
       <label for="recipe">Enter title for new recipe</label>
       <input name="recipe" id="recipe" type="text" th:value="*{title}" required>
-      <input name="submit" type="submit" value="Add"/>
+      <input name="submit" type="submit" value="Create"/>
     </form>
   </div>
 </div>

@@ -1,4 +1,4 @@
-package com.epm.recipe.persistence.in_memory;
+package com.epm.recipe.persistence.in_memory.dao;
 
 import java.io.IOException;
 import java.io.InputStream;

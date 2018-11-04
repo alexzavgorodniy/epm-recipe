@@ -19,11 +19,6 @@ public class MyRecipeController {
         this.recipeService = recipeService;
     }
 
-    @GetMapping("success")
-    public ModelAndView showSuccessPage() {
-        return new ModelAndView("success");
-    }
-
     @GetMapping("recipes")
     public ModelAndView showAllRecipes() {
         ModelAndView modelAndView = new ModelAndView("recipes");
@@ -46,17 +41,21 @@ public class MyRecipeController {
         return "redirect:recipeById?id=" + recipeSearch.getId();
     }
 
-    @GetMapping("addRecipe")
-    public ModelAndView showAddRecipePage() {
-        ModelAndView modelAndView = new ModelAndView("addRecipe");
-        modelAndView.addObject("addRecipe", new Recipe(""));
+    @GetMapping("createRecipe")
+    public ModelAndView showCreateRecipePage() {
+        ModelAndView modelAndView = new ModelAndView("createRecipe");
+        modelAndView.addObject("createRecipe", new Recipe(""));
         return modelAndView;
     }
 
-    @PostMapping("addRecipe")
+    @PostMapping("createRecipe")
     public String proceedNewRecipe(@ModelAttribute Recipe newRecipe) {
-        recipeService.create(newRecipe);
-        return "redirect:success";
+        try {
+            recipeService.create(newRecipe);
+            return "redirect:success";
+        } catch (IllegalArgumentException e) {
+            return "redirect:error?exceptionMessage=" + e.getMessage();
+        }
     }
 
     @GetMapping("updateRecipe")
@@ -95,12 +94,5 @@ public class MyRecipeController {
         } catch (IllegalArgumentException e) {
             return "redirect:error?exceptionMessage=" + e.getMessage();
         }
-    }
-
-    @GetMapping("error")
-    public ModelAndView showErrorPage(@RequestParam String exceptionMessage) {
-        ModelAndView modelAndView = new ModelAndView("error");
-        modelAndView.addObject("exception", exceptionMessage);
-        return modelAndView;
     }
 }

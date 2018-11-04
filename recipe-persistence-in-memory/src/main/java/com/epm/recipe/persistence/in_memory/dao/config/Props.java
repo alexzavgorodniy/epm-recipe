@@ -1,4 +1,4 @@
-package com.epm.recipe.persistence.in_memory.config;
+package com.epm.recipe.persistence.in_memory.dao.config;
 
 public enum Props {
     DRIVER("driver"),

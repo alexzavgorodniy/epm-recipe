@@ -2,7 +2,8 @@ package com.epm.recipe.persistence.in_memory.config;
 
 import com.epm.recipe.persistence.in_memory.InMemoryRecipeRepository;
 
-import com.epm.recipe.persistence.in_memory.RecipeDao;
+import com.epm.recipe.persistence.in_memory.dao.config.Config;
+import com.epm.recipe.persistence.in_memory.dao.RecipeDao;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;

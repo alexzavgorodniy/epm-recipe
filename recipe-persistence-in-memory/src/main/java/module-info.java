@@ -8,5 +8,5 @@ module recipe.persistence.in_memory {
     requires h2;
     requires commons.dbcp;
     exports com.epm.recipe.persistence.in_memory.config;
-    exports com.epm.recipe.persistence.in_memory;
+    exports com.epm.recipe.persistence.in_memory.dao;
 }

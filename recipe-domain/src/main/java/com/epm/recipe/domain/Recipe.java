@@ -1,8 +1,11 @@
 package com.epm.recipe.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Recipe {
+public class Recipe implements Serializable {
+
+    private static final long serialVersionUID = 522604961379586814L;
 
     private Long id;
 

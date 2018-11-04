@@ -1,6 +1,6 @@
 package com.epm.recipe.aggregator;
 
-import com.epm.recipe.persistence.in_memory.DbManager;
+import com.epm.recipe.persistence.in_memory.dao.DbManager;
 import com.epm.recipe.persistence.in_memory.config.InMemoryPersistenceConfiguration;
 import com.epm.recipe.service.impl.config.ServicesConfiguration;
 import com.epm.recipe.web_ui.config.WebUiConfiguration;

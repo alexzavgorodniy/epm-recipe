@@ -1,6 +1,5 @@
 package com.epm.recipe.service;
 
-import com.epm.recipe.domain.Recipe;
 import java.util.List;
 
 public interface EntityService<T> {
@@ -11,7 +10,7 @@ public interface EntityService<T> {
 
     void create(T t);
 
-    Recipe update(T t);
+    T update(T t);
 
-    Recipe delete(T t);
+    T delete(T t);
 }

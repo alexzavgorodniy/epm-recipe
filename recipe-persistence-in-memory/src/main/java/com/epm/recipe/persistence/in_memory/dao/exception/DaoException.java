@@ -1,4 +1,4 @@
-package com.epm.recipe.persistence.in_memory.exception;
+package com.epm.recipe.persistence.in_memory.dao.exception;
 
 public class DaoException extends RuntimeException {
 

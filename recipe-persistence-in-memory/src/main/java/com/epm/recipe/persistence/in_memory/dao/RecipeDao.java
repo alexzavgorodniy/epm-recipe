@@ -1,4 +1,4 @@
-package com.epm.recipe.persistence.in_memory;
+package com.epm.recipe.persistence.in_memory.dao;
 
 import com.epm.recipe.domain.Recipe;
 import com.epm.recipe.persistence.EntityDao;

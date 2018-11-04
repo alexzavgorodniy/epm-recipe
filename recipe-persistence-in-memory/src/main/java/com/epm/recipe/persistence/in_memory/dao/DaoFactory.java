@@ -1,7 +1,7 @@
-package com.epm.recipe.persistence.in_memory;
+package com.epm.recipe.persistence.in_memory.dao;
 
-import com.epm.recipe.persistence.in_memory.config.Config;
-import com.epm.recipe.persistence.in_memory.exception.DaoException;
+import com.epm.recipe.persistence.in_memory.dao.config.Config;
+import com.epm.recipe.persistence.in_memory.dao.exception.DaoException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class IndexController {
 
     @GetMapping("/index")
-    public ModelAndView shoeIndexPage() {
+    public ModelAndView showIndexPage() {
         return new ModelAndView("index");
     }
 
