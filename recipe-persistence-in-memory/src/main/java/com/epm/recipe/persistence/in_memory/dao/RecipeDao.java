@@ -20,11 +20,11 @@ public class RecipeDao implements EntityDao<Recipe> {
         return jdbcTemplate.queryForObject(sqlQuery,
                 (resultSet, rowNumber) -> {
                     ArrayList<Recipe> recipes = new ArrayList<>();
-                     do {
+                    do {
                         Recipe recipe = new Recipe(
                                 resultSet.getLong(1),
                                 resultSet.getString(2)
-                                );
+                        );
                         recipes.add(recipe);
                     } while (resultSet.next());
                     return recipes;
@@ -37,7 +37,7 @@ public class RecipeDao implements EntityDao<Recipe> {
         return jdbcTemplate.queryForObject(sqlQuery,
                 (resultSet, rowNumber) -> new Recipe(
                         resultSet.getLong(1),
-                resultSet.getString(2)),
+                        resultSet.getString(2)),
                 id);
     }
 
