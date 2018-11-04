@@ -4,13 +4,36 @@ import java.util.Objects;
 
 public class Recipe {
 
-    public final String title;
-    public final long id;
+    private Long id;
 
-    public Recipe(String title, long id) {
+    private String title;
+
+    public Recipe() {
+    }
+
+    public Recipe(String title) {
         this.title = Objects.requireNonNull(title, "title");
-        this.id = id;
+    }
 
+    public Recipe(Long id, String title) {
+        this.title = Objects.requireNonNull(title, "title");
+        this.id = Objects.requireNonNull(id, "id");
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     @Override
@@ -19,5 +42,4 @@ public class Recipe {
                 "title='" + title + '\'' +
                 '}';
     }
-
 }

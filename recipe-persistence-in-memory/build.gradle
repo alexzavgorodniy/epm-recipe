@@ -2,4 +2,8 @@ dependencies {
     implementation project(':recipe-persistence')
     implementation project(':recipe-domain')
     implementation 'org.springframework:spring-context'
+    implementation 'org.springframework:spring-jdbc'
+    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.3.0'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.196'
+    compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
 }

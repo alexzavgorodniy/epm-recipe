@@ -1,9 +1,13 @@
 package com.epm.recipe.web_ui.config;
 
+import com.epm.recipe.domain.Recipe;
+import com.epm.recipe.service.EntityService;
 import com.epm.recipe.service.RecipeService;
+import com.epm.recipe.web_ui.controller.IndexController;
+import com.epm.recipe.web_ui.controller.MyRestRecipeController;
 import com.epm.recipe.web_ui.controller.RecipeController;
+import com.epm.recipe.web_ui.controller.MyRecipeController;
 import com.epm.recipe.web_ui.controller.RestRecipeController;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -24,4 +28,18 @@ public class WebUiConfiguration {
         return new RecipeController(recipeService);
     }
 
+    @Bean
+    MyRecipeController recipeFindController(EntityService<Recipe> recipeService) {
+        return new MyRecipeController(recipeService);
+    }
+
+    @Bean
+    IndexController indexController() {
+        return new IndexController();
+    }
+
+    @Bean
+    MyRestRecipeController myRestRecipeController(EntityService<Recipe> recipeService) {
+        return new MyRestRecipeController(recipeService);
+    }
 }

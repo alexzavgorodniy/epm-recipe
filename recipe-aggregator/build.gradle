@@ -5,6 +5,9 @@ plugins {
 mainClassName = "$moduleName/com.epm.recipe.aggregator.Bootstrap"
 
 dependencies {
+//
+    implementation project(':recipe-domain')
+//
     implementation project(':recipe-web-ui')
     implementation project(':recipe-services')
     implementation project(':recipe-persistence-in-memory')

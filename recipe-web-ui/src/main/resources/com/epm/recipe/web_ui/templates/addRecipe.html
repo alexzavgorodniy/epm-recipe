@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      th:include="layout :: page">
+<body>
+
+<div th:fragment="content">
+  <div>
+    <h3>Add recipe</h3>
+  </div>
+  <hr>
+  <div>
+    <form name="addRecipe" method="post" th:object="${addRecipe}">
+      <label for="recipe">Enter title for new recipe</label>
+      <input name="recipe" id="recipe" type="text" th:value="*{title}" required>
+      <input name="submit" type="submit" value="Add"/>
+    </form>
+  </div>
+</div>
+</body>
+</html>
